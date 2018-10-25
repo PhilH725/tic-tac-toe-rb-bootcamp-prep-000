@@ -17,6 +17,7 @@ def display_board(board)
   puts " #{board[6]} | #{board[7]} | #{board[8]} "
 end
 
+<<<<<<< HEAD
 def input_to_index(input)
   input = input.to_i
   if input.between?(1,9)
@@ -27,11 +28,23 @@ def input_to_index(input)
 end
 
 def move(board, index, current_player)
+=======
+def input_to_index(user_input)
+  user_input = user_input.to_i
+  user_input -= 1
+end
+
+def move(board, index, current_player = "X")
+>>>>>>> 02377e5995b9676c430717c958d31aa9d7131a19
   board[index] = current_player
 end
 
 def position_taken?(board, index)
+<<<<<<< HEAD
   !(board[index].nil? || board[index] == " ")
+=======
+  board[index] == "X" || board[index] != "O"
+>>>>>>> 02377e5995b9676c430717c958d31aa9d7131a19
 end
 
 def valid_move?(board, index)
@@ -39,11 +52,15 @@ def valid_move?(board, index)
 end
 
 def turn(board)
+<<<<<<< HEAD
   player = current_player(board)
+=======
+>>>>>>> 02377e5995b9676c430717c958d31aa9d7131a19
   puts "Please enter 1-9:"
   input = gets.strip
   index = input_to_index(input)
   if valid_move?(board, index)
+<<<<<<< HEAD
     move(board, index, player)
     display_board(board)
   else
@@ -54,6 +71,12 @@ def turn(board)
     end
     move(board, index, player)
     display_board(board)
+=======
+    move(board, index)
+    display_board(board)
+  else
+    turn(board)
+>>>>>>> 02377e5995b9676c430717c958d31aa9d7131a19
   end
 end
 
@@ -109,6 +132,7 @@ def winner(board)
     winning_row = won?(board)
     board[winning_row[0]]
   end
+<<<<<<< HEAD
 end
 
 def play(board)
@@ -121,4 +145,6 @@ def play(board)
   else
     puts "Cat's Game!"
   end
+=======
+>>>>>>> 02377e5995b9676c430717c958d31aa9d7131a19
 end
